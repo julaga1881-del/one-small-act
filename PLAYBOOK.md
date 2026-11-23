@@ -66,4 +66,5 @@ Owner uploads manually.
 
 ## Used stories
 - 2026-11 — Patrick Mohr's wedding ring found by three Italian friends who returned it dressed as hobbits (GNN 23 Oct 2026, IBTimes 11 Nov 2026).
+- 2026-11 — "The Wrong Turn": Casey's GPS wrong turn led him to the Burke foster family's house fire near Lyerly, GA; all 14 got out (WRCB/CNN Newsource 22 Oct 2026, GNN 27 Oct 2026). Short scheduled 24 Nov 2026 07:00 Sydney.
 - (demo only, not published) Jordan Hope gives his shoes to "Mr. Roy", Maricopa AZ.
