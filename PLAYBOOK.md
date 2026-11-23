@@ -6,7 +6,8 @@ Reference episode: "They Returned His Lost Ring... Dressed as Hobbits" (render s
 ## FORMAT DECISION (2026-11-23): Shorts only
 Owner's call: make only YouTube Shorts (9:16, under 60 s) until the channel gains subscribers; long videos return later.
 - Script ~130–150 spoken words, hook in the first 2 s (no slow intro), 3–5 short character lines.
-- 1080x1920; captions 1–3 big words at ~60% height, clear of bottom 20% and right edge; no end card; last beat should loop into the first.
+- 1080x1920; no end card; last beat should loop into the first.
+- Captions (owner feedback 2026-11-23: big centred captions were distracting): small-to-medium bold text in the lower third (~74% height, never in the bottom 20%), max ~760 px wide, 3–5 words per chunk, must not cover faces or the main action.
 - Mix ~-14 LUFS. Credits per Short: ~1,000 voice + music reused from the library.
 Sections below describe the long-form defaults; apply them scaled down to this format.
 

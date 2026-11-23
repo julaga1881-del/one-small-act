@@ -632,14 +632,15 @@ def sh_trucks(c, lt, dur, T):
         u = ease_out(ramp(lt, 0.0, dur))
         fire_truck(c, lerp(1500, 860, u), 1470, 0.9, T)
         for i, x in enumerate((180, 300, 410)):
-            kid(c, i, x, 1640, 260, T, True, False, facing=0.6)
-        person(c, 'larita', 560, 1660, 420, T, facing=0.4, expr='concerned', lhand=(-6, -46), rhand=(8, -44), hold=baby_hold, gest=None)
+            kid(c, i, x, 1480, 260, T, True, False, facing=0.6)
+        person(c, 'larita', 560, 1500, 420, T, facing=0.4, expr='concerned', lhand=(-6, -46), rhand=(8, -44), hold=baby_hold, gest=None)
     K.vvignette(c, 0.45)
 
 
 def huddle(c, T, xs_off=0, h=420, casey=True):
-    group = [('kid', 0, 160, 1580, 230), ('james', None, 300, 1640, h), ('kid', 1, 420, 1600, 260), ('larita', None, 540, 1660, h * 0.94),
-             ('kid', 2, 660, 1610, 240), ('kid', 3, 760, 1585, 200)]
+    # back row (heads well above the lower-third caption band), small ones in front below it
+    group = [('kid', 0, 160, 1450, 230), ('james', None, 300, 1440, h), ('kid', 1, 420, 1430, 250), ('larita', None, 540, 1450, h * 0.94),
+             ('kid', 2, 660, 1440, 240), ('kid', 3, 760, 1430, 210)]
     for who, i, x, y, hh in group:
         if who == 'kid':
             kid(c, i, x + xs_off, y, hh, T, True, False, facing=0.0, expr='neutral')
@@ -647,10 +648,10 @@ def huddle(c, T, xs_off=0, h=420, casey=True):
             person(c, 'james', x + xs_off, y, hh, T, facing=0.2, expr='sad', lhand=(-15, -32), rhand=(24, -52), gest=None)
         else:
             person(c, 'larita', x + xs_off, y, hh, T, facing=0.2, expr='sad', lhand=(-6, -46), rhand=(8, -44), hold=baby_hold, gest=None)
-    for i, (x, y, hh) in enumerate(((240, 1700, 180), (470, 1720, 190), (620, 1730, 170))):
+    for i, (x, y, hh) in enumerate(((240, 1700, 180), (470, 1705, 190), (650, 1700, 170))):
         kid(c, 4 + i, x + xs_off, y, hh, T, True, False, facing=0.0)
     if casey:
-        person(c, 'casey', 880 + xs_off, 1620, 440, T, facing=-0.5, expr='sad', lhand=(-15, -32), rhand=(15, -32), gest=None)
+        person(c, 'casey', 880 + xs_off, 1440, 440, T, facing=-0.5, expr='sad', lhand=(-15, -32), rhand=(15, -32), gest=None)
 
 
 def sh_huddle(c, lt, dur, T):

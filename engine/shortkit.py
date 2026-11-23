@@ -151,8 +151,8 @@ class Voice:
         return caps
 
 
-def balance_chunks(idx, words, max_words=3, max_chars=16):
-    """split one sentence (word indices) into the fewest balanced chunks of <=3 words"""
+def balance_chunks(idx, words, max_words=5, max_chars=34):
+    """split one sentence (word indices) into the fewest balanced chunks of <=max_words words"""
     import itertools
     n = len(idx)
     L = [len(words[i]) for i in idx]
@@ -163,7 +163,7 @@ def balance_chunks(idx, words, max_words=3, max_chars=16):
             if any(len(p) > max_words for p in parts):
                 continue
             widths = [sum(len(words[i]) for i in p) + len(p) - 1 for p in parts]
-            score = max(widths) + 3 * k
+            score = max(widths) + 14 * k
             if best is None or score < best[0]:
                 best = (score, parts)
         if best and max(sum(len(words[i]) for i in p) + len(p) - 1 for p in best[1]) <= max_chars:
@@ -171,21 +171,44 @@ def balance_chunks(idx, words, max_words=3, max_chars=16):
     return best[1]
 
 
-def draw_caption(c, caps, T, colors, x=500, y=1152, maxw=840):
+def _wrap2(text, f, maxw):
+    words = text.split()
+    if f.measureText(text) <= maxw or len(words) < 2:
+        return [text]
+    best = None
+    for i in range(1, len(words)):
+        l1, l2 = ' '.join(words[:i]), ' '.join(words[i:])
+        w = max(f.measureText(l1), f.measureText(l2))
+        if best is None or w < best[0]:
+            best = (w, [l1, l2])
+    return best[1]
+
+
+def draw_caption(c, caps, T, colors, x=500, y=1420, maxw=760, size=60, y_max=1530, pill=True):
+    """Lower-third Shorts caption: bold, thin outline, soft dark pill; block centred at (x, y), never below y_max,
+    max two lines within maxw (keeps clear of the bottom UI band and the right-edge buttons)."""
     for cp in caps:
         if cp['start'] <= T < cp['end']:
-            size = 104
-            f = font(FONT_SUB, size)
-            while f.measureText(cp['text']) > maxw and size > 60:
-                size -= 4
-                f = font(FONT_SUB, size)
+            sz = size
+            while True:
+                f = font(FONT_SUB, sz)
+                lines = _wrap2(cp['text'], f, maxw)
+                if max(f.measureText(l) for l in lines) <= maxw or sz <= 40:
+                    break
+                sz -= 2
+            lh = sz * 1.2
+            bh = lh * len(lines)
+            cy = min(y, y_max - bh / 2 - 14)
             col = colors.get(cp['speaker'], '#ffffff')
-            pop = 1 + 0.08 * (1 - ease_out(ramp(T, cp['start'], cp['start'] + 0.12)))
+            a = ease_out(ramp(T, cp['start'], cp['start'] + 0.1))
             c.save()
-            c.translate(x, y)
-            c.scale(pop, pop)
-            draw_text(c, cp['text'], 4, 6 + size * 0.35, f, '#000000', 'center', '#000000', 22, 0.45, 0.45)
-            draw_text(c, cp['text'], 0, size * 0.35, f, col, 'center', '#0b0b0b', 16)
+            c.translate(x, cy + (1 - a) * 8)
+            if pill:
+                bw = max(f.measureText(l) for l in lines) + 44
+                draw(c, rrect(-bw / 2, -bh / 2 - 10, bw, bh + 20, 22), '#000000', None, 0, fa=0.42 * a)
+            for i, l in enumerate(lines):
+                yy = -bh / 2 + lh * (i + 0.5) + sz * 0.35
+                draw_text(c, l, 0, yy, f, col, 'center', '#0b0b0b', 7, a, a)
             c.restore()
             return
 
