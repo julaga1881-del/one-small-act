@@ -239,11 +239,38 @@ def draw_person(c, spec, x, y, h, st=None, T=0.0):
         for k in range(3):
             c.drawCircle(-2.4 * u, -42 * u + k * 5.5 * u, 1.0 * u, fillp('#e8c25a'))
         c.drawRect(skia.Rect.MakeLTRB(-20 * u, -28 * u, 20 * u, -25 * u), fillp('#5a3b22'))
+    elif top == 'plaid':
+        dk = shade(tc, -0.35)
+        for k in range(-5, 6):
+            c.drawLine(k * 4.2 * u, -60 * u, k * 4.2 * u, -20 * u, strokep(dk, 1.1 * u, 0.7))
+        for k in range(10):
+            c.drawLine(-20 * u, -58 * u + k * 4.2 * u, 20 * u, -58 * u + k * 4.2 * u, strokep(dk, 1.1 * u, 0.7))
+        for k in range(-2, 3):
+            c.drawLine(k * 8.4 * u + 2 * u, -60 * u, k * 8.4 * u + 2 * u, -20 * u, strokep('#f1e6cc', 0.5 * u, 0.5))
+        for k in range(3):
+            c.drawCircle(0, -48 * u + k * 7 * u, 0.8 * u, fillp('#f1e6cc'))
+    elif top == 'cardigan':
+        inner = spec.get('inner_col', '#efe6d4')
+        c.drawRect(skia.Rect.MakeLTRB(-5 * u, -60 * u, 5 * u, -20 * u), fillp(inner))
+        for s2 in (-1, 1):
+            c.drawLine(s2 * 5 * u, -57 * u, s2 * 5 * u, -21 * u, strokep(INK, 0.6 * u))
+            c.drawRect(skia.Rect.MakeLTRB(s2 * 7 * u - 3 * u, -36 * u, s2 * 7 * u + 3 * u, -31 * u), strokep(shade(tc, -0.3), 0.5 * u))
+        for k in range(4):
+            c.drawCircle(-6.2 * u, -50 * u + k * 6.5 * u, 0.8 * u, fillp('#e8d6a0'))
+        c.drawRect(skia.Rect.MakeLTRB(-20 * u, -26 * u, 20 * u, -20 * u), fillp(shade(tc, -0.18)))
+        for k in range(-6, 7):
+            c.drawLine(k * 2.4 * u, -26 * u, k * 2.4 * u, -20 * u, strokep(shade(tc, -0.35), 0.4 * u))
+    elif top == 'pjs':
+        for k in range(-4, 5):
+            c.drawLine(k * 4 * u, -60 * u, k * 4 * u, -20 * u, strokep('#ffffff', 1.3 * u, 0.35))
     c.restore()
     c.drawPath(body, strokep(INK, sw))
     # collar
-    if top in ('jumper', 'tee'):
+    if top in ('jumper', 'tee', 'pjs'):
         draw(c, oval(0, -57.5 * u, 6 * u, 2.2 * u), shade(tc, -0.2), INK, sw * 0.7)
+    elif top in ('plaid', 'cardigan'):
+        c.drawPath(poly([(-6 * u, -58 * u), (-1 * u, -50 * u), (0, -57 * u), (1 * u, -50 * u), (6 * u, -58 * u)], False),
+                   strokep(INK, sw * 0.7))
     elif top == 'blouse':
         c.drawPath(poly([(-5 * u, -57 * u), (0, -50 * u), (5 * u, -57 * u)], False), strokep(INK, sw * 0.7))
     elif top == 'waistcoat':
@@ -275,7 +302,7 @@ def draw_person(c, spec, x, y, h, st=None, T=0.0):
         if top == 'tee' or top == 'waistcoat':
             # little sleeve
             draw(c, oval(s * 12.5 * u, -51 * u, 3.6 * u, 3.6 * u), tc if top == 'tee' else spec['top_col'], INK, sw * 0.7)
-        elif top in ('jumper', 'blouse'):
+        elif top in ('jumper', 'blouse', 'plaid', 'cardigan', 'pjs'):
             # sleeve: thick coloured upper arm
             pth = poly([(sx, sy), (ex, ey)], False)
             c.drawPath(pth, strokep(INK, 5.2 * u + sw * 1.4))
@@ -428,7 +455,10 @@ def draw_person(c, spec, x, y, h, st=None, T=0.0):
         draw(c, smooth_path([(13 * u, -12 * u), (15 * u, -7 * u), (13 * u, -5 * u), (11 * u, -7 * u)]), '#9fd8ff', INK, u * 0.5)
     # hair front
     hs = spec['hair']
-    if hs in ('short', 'wavy', 'long', 'pony', 'bunches', 'buzz'):
+    if hs == 'bun':
+        draw(c, oval(0, -R * 1.12, R * 0.42, R * 0.36), shade(hc, -0.05), INK, sw)
+        c.drawArc(skia.Rect.MakeLTRB(-R * 0.3, -R * 1.4, R * 0.2, -R * 1.0), 200, 80, False, strokep(shade(hc, 0.35), u, 0.7))
+    if hs in ('short', 'wavy', 'long', 'pony', 'bunches', 'buzz', 'bun'):
         if hs == 'pony':
             sw2 = math.sin(T * 3 + seed) * 2 * u
             draw(c, smooth_path([(-R * 0.6 - face * 4 * u, -R * 0.5), (-R * 1.3 - face * 4 * u + sw2, -R * 0.1),
@@ -437,12 +467,12 @@ def draw_person(c, spec, x, y, h, st=None, T=0.0):
         if hs == 'bunches':
             for s in (-1, 1):
                 draw(c, oval(s * R * 1.05, -R * 0.15, R * 0.32, R * 0.36), hc, INK, sw)
-        cap_lo = {'short': -0.35, 'wavy': -0.25, 'long': -0.15, 'pony': -0.3, 'bunches': -0.3, 'buzz': -0.55}[hs]
+        cap_lo = {'short': -0.35, 'wavy': -0.25, 'long': -0.15, 'pony': -0.3, 'bunches': -0.3, 'buzz': -0.55, 'bun': -0.3}[hs]
         p = skia.Path()
         p.moveTo(-R * 1.02, R * cap_lo + R * 0.25)
         p.cubicTo(-R * 1.1, -R * 1.25, R * 1.1, -R * 1.25, R * 1.02, R * cap_lo + R * 0.25)
         # fringe line
-        if hs in ('long', 'pony', 'bunches'):
+        if hs in ('long', 'pony', 'bunches', 'bun'):
             p.cubicTo(R * 0.7, -R * 0.55, R * 0.1 + fx, -R * 0.75, -R * 0.1 + fx, -R * 0.45)
             p.cubicTo(-R * 0.4 + fx, -R * 0.7, -R * 0.8, -R * 0.55, -R * 1.02, R * cap_lo + R * 0.25)
         elif hs == 'wavy':
