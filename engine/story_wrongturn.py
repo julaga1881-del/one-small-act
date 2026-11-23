@@ -12,7 +12,7 @@ from shortkit import VCam, vlayer, vcam, VW, VH
 from sets import glow, smooth_path
 
 AUD = '/tmp/claude-0/-home-claude/cec319aa-a116-5716-8373-5faeca7260eb/scratchpad/wrongturn/audio'
-MUSIC = '/tmp/claude-0/-home-claude/cec319aa-a116-5716-8373-5faeca7260eb/scratchpad/hobbit/audio/music_eleven.mp3'
+MUSIC = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'assets', 'music_warm_folk.mp3')
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT_MP4 = os.path.join(REPO, 'videos', '2026-11-wrong-turn-short.mp4')
 WORK = '/tmp/claude-0/-home-claude/cec319aa-a116-5716-8373-5faeca7260eb/scratchpad/wrongturn/work'

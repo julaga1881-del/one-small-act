@@ -68,3 +68,9 @@ Owner uploads manually.
 - 2026-11 — Patrick Mohr's wedding ring found by three Italian friends who returned it dressed as hobbits (GNN 23 Oct 2026, IBTimes 11 Nov 2026).
 - 2026-11 — "The Wrong Turn": Casey's GPS wrong turn led him to the Burke foster family's house fire near Lyerly, GA; all 14 got out (WRCB/CNN Newsource 22 Oct 2026, GNN 27 Oct 2026). Short scheduled 24 Nov 2026 07:00 Sydney.
 - (demo only, not published) Jordan Hope gives his shoes to "Mr. Roy", Maricopa AZ.
+
+## Music library
+- assets/music_warm_folk.mp3 — ElevenLabs Music v2.5, 155 s, 72 BPM 4/4 (bar 3.33 s). Sections (track time): tender 0–52 s, suspense 53–66 s, lift 66–91 s, folk 92–131 s, resolve 132–149 s. Reuse with bar-aligned crossfades (see story_wrongturn.py). Made on the free plan: replace with a paid-plan track before monetisation.
+
+## Automation
+- Daily scheduled task "One Small Act daily Short" runs 21:43 Sydney and schedules the Short for 07:00 next morning via Metricool (brand 8307078). Owner does not pre-review; they take down anything wrong themselves.
