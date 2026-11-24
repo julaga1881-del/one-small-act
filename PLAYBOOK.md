@@ -5,7 +5,14 @@ Reference episode: "They Returned His Lost Ring... Dressed as Hobbits" (render s
 
 ## FORMAT DECISION (2026-11-23): Shorts only
 Owner's call: make only YouTube Shorts (9:16, under 60 s) until the channel gains subscribers; long videos return later.
-- Script ~130–150 spoken words, hook in the first 2 s (no slow intro), 3–5 short character lines.
+- GROWTH RULES (2026-11-24, from channel data: the only hit so far — 1.4k views — was "His leg snapped mid-race… then his dad", an iconic, already-famous true moment; obscure local news Shorts got single-digit views):
+  - Alternate story sources: odd days = iconic/evergreen true moments many people half-remember (sport, history, famous kindness moments, any year); even days = recent viral news. Same fact rules apply (credible sources, nothing invented).
+  - Length 30–45 s (~80–110 spoken words). Shorter = higher completion and replays, which drive Shorts reach.
+  - First 1 s: start at the most dramatic moment + a 3–6-word on-screen hook text at the top (e.g. "HIS LEG SNAPPED MID-RACE…"), shown for ~2 s. No scene-setting before the conflict.
+  - Title = the hook as a cliffhanger ("His leg snapped mid-race… then his dad…" pattern). Keep it honest.
+  - Ending loops into the opening line; no outro.
+  - Description ends with one question to spark comments (e.g. "Would you have stopped?").
+- Script: hook in the first 1–2 s (no slow intro), 2–4 short character lines.
 - 1080x1920; no end card; last beat should loop into the first.
 - Captions (owner feedback 2026-11-23: big centred captions were distracting): small-to-medium bold text in the lower third (~74% height, never in the bottom 20%), max ~760 px wide, 3–5 words per chunk, must not cover faces or the main action.
 - Mix ~-14 LUFS. Credits per Short: ~1,000 voice + music reused from the library.
