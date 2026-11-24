@@ -74,8 +74,8 @@ Owner uploads manually.
 ## Used stories
 - 2026-11 — Patrick Mohr's wedding ring found by three Italian friends who returned it dressed as hobbits (GNN 23 Oct 2026, IBTimes 11 Nov 2026).
 - 2026-11 — "The Wrong Turn": Casey's GPS wrong turn led him to the Burke foster family's house fire near Lyerly, GA; all 14 got out (WRCB/CNN Newsource 22 Oct 2026, GNN 27 Oct 2026). Short scheduled 24 Nov 2026 07:00 Sydney.
-- 2026-11 — "Thanks to Arsenal": Alastair Cass stormed out as Arsenal lost 3-0 to Brighton, found Sallie stuck chest-deep in mud near Chulmleigh, Devon; two-hour rescue (SWNS 2 Oct 2026, Good News Network 3 Oct 2026). Short scheduled 25 Nov 2026.
-- Also used (channel hit, avoid repeating): Derek Redmond's dad helping him finish the 1992 Olympic 400 m.
+- 2026-11 — "Thanks to Arsenal": Alastair Cass stormed out as Arsenal lost 3-0 to Brighton, found Sallie stuck chest-deep in mud near Chulmleigh, Devon; two-hour rescue (SWNS 2 Oct 2026, Good News Network 3 Oct 2026). Short scheduled 25 Nov 2026 16:00 Sydney (Metricool best-time slot).
+- Also used on the channel (avoid repeating): Derek Redmond's dad helping him finish the 1992 Olympic 400 m; Oseola McCarty, the washerwoman who saved $150,000 and gave it to strangers' scholarships.
 - (demo only, not published) Jordan Hope gives his shoes to "Mr. Roy", Maricopa AZ.
 
 ## Music library
