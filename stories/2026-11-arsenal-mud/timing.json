@@ -1,0 +1,85 @@
+{
+ "total_duration": 44.444,
+ "lines": [
+  {
+   "line": 1,
+   "speaker": "CASS",
+   "text": "At 3-0 down – well I'd had enough!",
+   "start": 0.2,
+   "end": 4.301,
+   "file": "vo/line01.mp3"
+  },
+  {
+   "line": 2,
+   "speaker": "NARRATOR",
+   "text": "Walking to his barn, he heard something from the valley below.",
+   "start": 4.551,
+   "end": 8.287,
+   "file": "vo/line02.mp3"
+  },
+  {
+   "line": 3,
+   "speaker": "SALLIE",
+   "text": "Help!",
+   "start": 8.487,
+   "end": 9.506,
+   "file": "vo/line03.mp3"
+  },
+  {
+   "line": 4,
+   "speaker": "NARRATOR",
+   "text": "He raced down on his quad bike and found Sallie, stuck in a ditch, mud up to her chest. She'd been there for hours.",
+   "start": 9.806,
+   "end": 16.623,
+   "file": "vo/line04.mp3"
+  },
+  {
+   "line": 5,
+   "speaker": "CASS",
+   "text": "I just couldn't believe what I was seeing!",
+   "start": 16.823,
+   "end": 19.566,
+   "file": "vo/line05.mp3"
+  },
+  {
+   "line": 6,
+   "speaker": "NARRATOR",
+   "text": "He tried rope and boards, but the mud wouldn't let go. No signal. So he raced home to call for help.",
+   "start": 19.816,
+   "end": 26.922,
+   "file": "vo/line06.mp3"
+  },
+  {
+   "line": 7,
+   "speaker": "NARRATOR",
+   "text": "Firefighters, police, a boat team, four ambulance crews, helicopters. Two hours later, Sallie was free.",
+   "start": 27.122,
+   "end": 34.854,
+   "file": "vo/line07.mp3"
+  },
+  {
+   "line": 8,
+   "speaker": "NARRATOR",
+   "text": "Later, she sent him a card.",
+   "start": 35.204,
+   "end": 37.32,
+   "file": "vo/line08.mp3"
+  },
+  {
+   "line": 9,
+   "speaker": "SALLIE",
+   "text": "Thanks to Arsenal for being rubbish at football!",
+   "start": 37.52,
+   "end": 41.49,
+   "file": "vo/line09.mp3"
+  },
+  {
+   "line": 10,
+   "speaker": "NARRATOR",
+   "text": "All because his team was losing…",
+   "start": 41.84,
+   "end": 44.244,
+   "file": "vo/line10.mp3"
+  }
+ ]
+}

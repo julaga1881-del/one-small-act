@@ -1,0 +1,12 @@
+# One Small Act — Short: "Thanks to Arsenal" (2026-11) — based on a true story, dramatised
+# Format: N | SPEAKER | eleven_v4 text | VISUAL (1080x1920, 9:16)
+1 | CASS | [exasperated, groaning] At 3-0 down – well I'd had enough! | VISUAL: Living room, TV showing a generic green pitch (no logos, no scoreboard text); stick-figure Alastair throws his hands up, spins and storms out the back door, door swinging behind him.
+2 | NARRATOR | [whispering] Walking to his barn, he heard something from the valley below. | VISUAL: Dusk-lit hillside with a barn; Alastair stops mid-stride, head cocked, camera pushes past him down into a misty river valley.
+3 | SALLIE | [faint, desperate] Help! | VISUAL: Deep in the valley, tangled reeds and a dark ditch; only a small hand and a muddy head visible, sound ripples drifting up the slope.
+4 | NARRATOR | [urgent] He raced down on his quad bike and found Sallie, stuck in a ditch, mud up to her chest. She'd been there for hours. | VISUAL: Quad bike bouncing down the slope, headlight on; Alastair skids to a stop above the ditch where Sallie, chest-deep in brown mud, shivers.
+5 | CASS | [stunned, breathless] I just couldn't believe what I was seeing! | VISUAL: Close on Alastair kneeling at the edge, hands on head, Sallie looking up at him.
+6 | NARRATOR | [tense] He tried rope and boards, but the mud wouldn't let go. No signal. So he raced home to call for help. | VISUAL: Wooden boards laid across the mud, rope tied around Sallie, Alastair pulling, rope taut, then letting go; he holds up a phone showing no bars (no text), then quad speeds back uphill.
+7 | NARRATOR | [building, hopeful] Firefighters, police, a boat team, four ambulance crews, helicopters. Two hours later, Sallie was free. | VISUAL: Flashing lights along the valley rim, stick-figure firefighters carrying gear down, a helicopter hovering with a searchlight; Sallie lifted out onto boards, wrapped in a blanket.
+8 | NARRATOR | [warmly] Later, she sent him a card. | VISUAL: Alastair at his kitchen table opening an envelope; a simple folded card.
+9 | SALLIE | [laughs, grateful] Thanks to Arsenal for being rubbish at football! | VISUAL: Close on the card; its only text is "Thanks to Arsenal for being rubbish at football!" Alastair grinning.
+10 | NARRATOR | [softly, smiling] All because his team was losing… | VISUAL: Camera drifts from the card to the living-room TV glowing with the generic green pitch, matching the opening frame for the loop.
