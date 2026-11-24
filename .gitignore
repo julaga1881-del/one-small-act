@@ -1,2 +1,3 @@
 stories/*/lines.json
 __pycache__/
+stories/*/vo/
