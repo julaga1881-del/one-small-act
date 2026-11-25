@@ -126,14 +126,29 @@ def draw_person(c, spec, x, y, h, st=None, T=0.0):
         lift = 0
     # ---- legs
     lc = spec.get('pants', '#333')
+    shorts = spec.get('shorts')
+
     def leg(x0, y0, x1, y1, x2=None, y2=None):
         pts = [(x0, y0), (x1, y1)] + ([(x2, y2)] if x2 is not None else [])
         p = poly(pts, close=False)
         c.drawPath(p, strokep(INK, 4.2 * u + sw * 1.6))
-        c.drawPath(p, strokep(lc, 4.2 * u))
+        if shorts:  # bare legs + athletic shorts over the upper thigh
+            c.drawPath(p, strokep(skin, 4.2 * u))
+            mx_, my_ = lerp(x0, x1, 0.5), lerp(y0, y1, 0.5)
+            q = poly([(x0, y0 - 3 * u), (mx_, my_)], close=False)
+            c.drawPath(q, strokep(INK, 7.6 * u + sw * 1.4, cap='butt'))
+            c.drawPath(q, strokep(shorts, 7.6 * u, cap='butt'))
+        else:
+            c.drawPath(p, strokep(lc, 4.2 * u))
         return pts[-1]
     feet = []
-    if legs == 'walk':
+    drop = 0.0
+    if legs == 'kneel':  # kneeling on both knees: body lowered by `drop`, shins flat on the ground behind
+        drop = 10 * u
+        d = 1 if face >= 0 else -1
+        for s in (-1, 1):
+            feet.append(leg(s * 5 * u, hip_y + drop, s * 4 * u + d * 5 * u, -1.8 * u, s * 4 * u - d * 9 * u, -1.2 * u))
+    elif legs == 'walk':
         for s, off in ((-1, 0), (1, math.pi)):
             a = math.sin(phase + off) * 0.42
             fx = s * 3 * u + math.sin(a) * 24 * u
@@ -164,7 +179,7 @@ def draw_person(c, spec, x, y, h, st=None, T=0.0):
             for k in range(3):
                 c.drawCircle(fx + (3.6 + k * 1.3) * u * (1 if face >= 0 else -1), fy - 2.2 * u, 0.5 * u,
                              fillp(shade(skin, -0.3)))
-    c.translate(0, breath * u * 0.4)
+    c.translate(0, breath * u * 0.4 + drop)
     # ---- cloak (behind)
     if spec.get('cloak'):
         cl = spec['cloak']
@@ -263,10 +278,20 @@ def draw_person(c, spec, x, y, h, st=None, T=0.0):
     elif top == 'pjs':
         for k in range(-4, 5):
             c.drawLine(k * 4 * u, -60 * u, k * 4 * u, -20 * u, strokep('#ffffff', 1.3 * u, 0.35))
+    elif top == 'vest':  # sleeveless athletics vest, plain colours (optional trim band), no text or symbols
+        c.drawRect(skia.Rect.MakeLTRB(-20 * u, -26 * u, 20 * u, -20 * u), fillp(shade(tc, -0.2)))
+        if spec.get('trim'):
+            c.drawRect(skia.Rect.MakeLTRB(-20 * u, -47 * u, 20 * u, -42.5 * u), fillp(spec['trim']))
+            for s2 in (-1, 1):
+                c.drawLine(s2 * 10.5 * u, -57 * u, s2 * 13.8 * u, -48 * u, strokep(spec['trim'], 1.6 * u))
     c.restore()
     c.drawPath(body, strokep(INK, sw))
     # collar
-    if top in ('jumper', 'tee', 'pjs'):
+    if top == 'vest':
+        draw(c, oval(0, -57.5 * u, 5.4 * u, 2.0 * u), skin, INK, sw * 0.7)
+        c.drawArc(skia.Rect.MakeLTRB(-5.4 * u, -59.5 * u, 5.4 * u, -55.5 * u), 0, 180, False,
+                  strokep(spec.get('trim') or shade(tc, -0.25), 1.2 * u))
+    elif top in ('jumper', 'tee', 'pjs'):
         draw(c, oval(0, -57.5 * u, 6 * u, 2.2 * u), shade(tc, -0.2), INK, sw * 0.7)
     elif top in ('plaid', 'cardigan'):
         c.drawPath(poly([(-6 * u, -58 * u), (-1 * u, -50 * u), (0, -57 * u), (1 * u, -50 * u), (6 * u, -58 * u)], False),
@@ -322,8 +347,10 @@ def draw_person(c, spec, x, y, h, st=None, T=0.0):
     if hold:
         hold(c, hands, u)
     # ---- head
+    nod = st.get('nod', 0.0)  # 0..1 head pitched down (features slide down)
+    look = st.get('look', 0.0)  # pupils raised (looking up), in u
     c.save()
-    c.translate(0, hy)
+    c.translate(0, hy + nod * 1.2 * u)
     c.rotate(tilt)
     R = 15.5 * u
     head = oval(0, 0, R, R)
@@ -337,6 +364,8 @@ def draw_person(c, spec, x, y, h, st=None, T=0.0):
               strokep('#ffffff', u * 0.9, 0.55))
     c.drawPath(head, strokep(INK, sw))
     fx = face * 4.2 * u
+    c.save()
+    c.translate(0, nod * 2.8 * u)
     # beard / stubble
     if spec.get('beard'):
         bc = shade(hc, -0.05)
@@ -379,9 +408,10 @@ def draw_person(c, spec, x, y, h, st=None, T=0.0):
             c.drawOval(skia.Rect.MakeLTRB(ex - 1.5 * u, ey - 1.4 * u, ex + 1.5 * u, ey + 1.6 * u), fillp(INK))
             c.drawCircle(ex - 0.5 * u, ey - 0.6 * u, 0.5 * u, fillp('#ffffff'))
         else:
-            look = 0.9 * u if eyes == 'side' else 0
-            c.drawOval(skia.Rect.MakeLTRB(ex - 1.6 * u + look, ey - 2.2 * u, ex + 1.6 * u + look, ey + 2.2 * u), fillp(INK))
-            c.drawCircle(ex - 0.5 * u + look, ey - 1.0 * u, 0.55 * u, fillp('#ffffff'))
+            lk = 0.9 * u if eyes == 'side' else 0
+            ly = -look * u
+            c.drawOval(skia.Rect.MakeLTRB(ex - 1.6 * u + lk, ey - 2.2 * u + ly, ex + 1.6 * u + lk, ey + 2.2 * u + ly), fillp(INK))
+            c.drawCircle(ex - 0.5 * u + lk, ey - 1.0 * u + ly, 0.55 * u, fillp('#ffffff'))
         # brows
         byy = ey - 5.2 * u - bl * u
         ang = math.radians(bt) * s * -1
@@ -453,6 +483,17 @@ def draw_person(c, spec, x, y, h, st=None, T=0.0):
                    fillp('#8fd0ff', 0.9))
     if st.get('sweat'):
         draw(c, smooth_path([(13 * u, -12 * u), (15 * u, -7 * u), (13 * u, -5 * u), (11 * u, -7 * u)]), '#9fd8ff', INK, u * 0.5)
+    if st.get('tears'):  # streams down both cheeks with a falling drop
+        for s in (-1, 1):
+            ex = fx + s * 5.4 * u
+            c.drawPath(smooth_path([(ex, ey + 2.2 * u), (ex + s * 0.8 * u, ey + 6 * u), (ex + s * 0.4 * u, ey + 10 * u),
+                                    (ex + s * 1.2 * u, ey + 14 * u)], False), strokep('#8fd0ff', 1.4 * u, 0.85))
+            ph = (T * 1.4 + (0.45 if s > 0 else 0)) % 1.0
+            dy_ = ey + 3 * u + ph * 12 * u
+            draw(c, smooth_path([(ex + s * 0.8 * u, dy_ - 1.6 * u), (ex + s * 0.8 * u + 1.1 * u, dy_ + 0.6 * u),
+                                 (ex + s * 0.8 * u, dy_ + 1.5 * u), (ex + s * 0.8 * u - 1.1 * u, dy_ + 0.6 * u)]),
+                 '#bfe6ff', None, 0, fa=0.9 * (1 - ph * 0.6))
+    c.restore()  # facial features (nod offset)
     # hair front
     hs = spec['hair']
     if hs == 'bun':

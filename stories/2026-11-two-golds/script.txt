@@ -1,0 +1,13 @@
+# One Small Act — Short: "Two Golds" (2026-11) — based on a true story, dramatised
+# Format: N | SPEAKER | eleven_v4 text | VISUAL (1080x1920, 9:16)
+# Spoken word count (excluding audio tags): ~104 words, est. ~38-42 s
+1 | NARRATOR | [whispering] Two point three seven metres. Two best friends, Barshim and Tamberi. Not one miss between them. | VISUAL: Night stadium, low angle on a high-jump bar; stick-figure Barshim (maroon-and-white vest) and stick-figure Tamberi (blue vest) stand side by side at the edge of the landing mat, looking up at the bar. No scoreboard text, no logos, no rings. (1080x1920 9:16)
+2 | NARRATOR | [tense] Then the bar went up to two point three nine. Three tries each. Three misses each. | VISUAL: Quick triple-cut: Barshim arcs over, bar clatters down; Tamberi arcs over, bar clatters down; both sit on the mat staring at the fallen bar. (1080x1920 9:16)
+3 | NARRATOR | [softly] An official offered a jump-off. One gold. One silver. | VISUAL: A stick-figure official in a plain grey jacket walks up to the two athletes, gestures toward the bar; Barshim and Tamberi exchange a look. (1080x1920 9:16)
+4 | BARSHIM | [softly] [pause] Can we have two golds? | VISUAL: Close on Barshim, head tilted toward the official, a small hopeful half-smile. (1080x1920 9:16)
+5 | NARRATOR | [pause] The official nodded. | VISUAL: Close on the official giving one slow nod; Tamberi's eyes go wide in the background. (1080x1920 9:16)
+6 | NARRATOR | [excited] Tamberi slapped his hand and leapt into his arms. | VISUAL: Hand-slap, then Tamberi launches into Barshim's arms; camera spins around the pair; Tamberi then flops onto the track, rolling and screaming with joy. (1080x1920 9:16)
+7 | NARRATOR | [warmly] Before Rio, Tamberi was told he might never compete again. He kept his ankle cast for five years. Tonight, it was right there on the track. | VISUAL: Soft flashback tint: Tamberi on crutches, leg in a plain white cast (no writing visible); dissolve to the present, Tamberi kneeling on the track beside the old plain white cast shell. (1080x1920 9:16)
+8 | TAMBERI | [voice breaking] I dreamed of this so many times. | VISUAL: Close on Tamberi, tears streaming, hand on the cast. (1080x1920 9:16)
+9 | BARSHIM | [laughs, tearful] This is beyond sport. | VISUAL: Barshim pulls Tamberi up; the two embrace, foreheads together, stadium lights flaring. (1080x1920 9:16)
+10 | NARRATOR | [softly] Two golds… because two friends had both cleared… | VISUAL: Camera tilts up from the embracing pair to the empty high-jump bar under the lights, matching the opening frame for the loop. (1080x1920 9:16)

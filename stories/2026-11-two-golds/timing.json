@@ -1,0 +1,85 @@
+{
+ "total_duration": 44.069,
+ "lines": [
+  {
+   "line": 1,
+   "speaker": "NARRATOR",
+   "text": "Two point three seven metres. Two best friends, Barshim and Tamberi. Not one miss between them.",
+   "start": 0.2,
+   "end": 6.887,
+   "file": "vo/line01.mp3"
+  },
+  {
+   "line": 2,
+   "speaker": "NARRATOR",
+   "text": "Then the bar went up to two point three nine. Three tries each. Three misses each.",
+   "start": 7.137,
+   "end": 12.858,
+   "file": "vo/line02.mp3"
+  },
+  {
+   "line": 3,
+   "speaker": "NARRATOR",
+   "text": "An official offered a jump-off. One gold. One silver.",
+   "start": 13.158,
+   "end": 17.521,
+   "file": "vo/line03.mp3"
+  },
+  {
+   "line": 4,
+   "speaker": "BARSHIM",
+   "text": "Can we have two golds?",
+   "start": 17.871,
+   "end": 19.438,
+   "file": "vo/line04.mp3"
+  },
+  {
+   "line": 5,
+   "speaker": "NARRATOR",
+   "text": "The official nodded.",
+   "start": 19.738,
+   "end": 21.122,
+   "file": "vo/line05.mp3"
+  },
+  {
+   "line": 6,
+   "speaker": "NARRATOR",
+   "text": "Tamberi slapped his hand and leapt into his arms.",
+   "start": 21.322,
+   "end": 24.483,
+   "file": "vo/line06.mp3"
+  },
+  {
+   "line": 7,
+   "speaker": "NARRATOR",
+   "text": "Before Rio, Tamberi was told he might never compete again. He kept his ankle cast for five years. Tonight, it was right there on the track.",
+   "start": 24.833,
+   "end": 33.95,
+   "file": "vo/line07.mp3"
+  },
+  {
+   "line": 8,
+   "speaker": "TAMBERI",
+   "text": "I dreamed of this so many times.",
+   "start": 34.25,
+   "end": 36.993,
+   "file": "vo/line08.mp3"
+  },
+  {
+   "line": 9,
+   "speaker": "BARSHIM",
+   "text": "This is beyond sport.",
+   "start": 37.243,
+   "end": 40.142,
+   "file": "vo/line09.mp3"
+  },
+  {
+   "line": 10,
+   "speaker": "NARRATOR",
+   "text": "Two golds… because two friends had both cleared…",
+   "start": 40.542,
+   "end": 44.069,
+   "file": "vo/line10.mp3"
+  }
+ ]
+}
