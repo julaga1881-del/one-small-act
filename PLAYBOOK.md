@@ -85,5 +85,8 @@ Owner uploads manually.
 ## Learnings
 - 2026-11-25 (production): check period details in audio too — Tokyo 2020 had no spectators, so crowd SFX had to be removed. build_vo.py's loudnorm outputs 192 kHz and mp3 durations run ~1% long vs timing.json; renderers should re-measure onsets.
 
+- 2026-11-25 (YouTube Studio, last 28 days, owner screenshot): Shorts "His leg snapped mid-race…" 1.4k views, "He Lost His Wedding Ring…" (hobbits) 1.2k, "She saved $150,000…" 444, "His GPS Took a Wrong Turn…" 84 (only ~1.5 days old); long-form "The Washerwoman…" 5. Takeaways: iconic moments AND quirky recent news with a strange, visual twist (hobbit costumes) both work; plain local rescue news is weaker, so on even days favour stories with an odd, picture-able twist. Long-form gets ~nothing, so stay Shorts-only. 99.9% of viewers are new, so returning viewers aren't building yet.
+- Metricool's YouTube per-video metrics (YTVP06/08) came back null on 2026-11-25; use owner screenshots/Studio numbers when available.
+
 ## Automation
 - Daily scheduled task "One Small Act daily Short" runs 21:43 Sydney and schedules the Short for 07:00 next morning via Metricool (brand 8307078). Owner does not pre-review; they take down anything wrong themselves.
